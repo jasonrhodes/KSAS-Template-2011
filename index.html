@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <title>The KSAS Template</title>
 <link rel="stylesheet" href="style.css" media="all" />
+<link rel="stylesheet" href="nivo-slider-2/nivo-slider.css" media="all" />
 </head>
 
 <body>
@@ -51,15 +52,32 @@
 			</div>
 		</div>
 		<div class="col colwide colend primary mod">
-			<div class="feature">
-			feature
+		
+			<div id="feature-carousel" class="feature">
+				<a href="http://google.com"><img class="first" src="images/feature1.jpg" title="#nivo-caption-1" /></a>
+				<img src="images/feature2.jpg" />
+				<img src="images/feature3.jpg" title="#nivo-caption-3" />
 			</div>
-			<div class="col colfirst colwide body-content">
-			body content, followed by more content in the body, whereby which would have be followed by such that there is more content as well, heretoforward, and so on
+			
+			<div id="nivo-caption-1" class="nivo-html-caption">
+			    <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="http://yahoo.com">a link</a> or <a href="http://jhu.edu">even two</a>.
+			</div>
+			
+			<div id="nivo-caption-3" class="nivo-html-caption">
+			    <p>Dr. Teeth and the Electric Mayhem rocking out at Madison Square Garden.</p>
+			</div>
+			
+			<div class="col colfirst colwide">
+			<div class="body-content">
+				<h1>Body Content</h1>
+				<p>body content, followed by more content in the body, whereby which would have be followed by such that there is more content as well, heretoforward, and so on</p>
+			</div>
 			</div>
 			<div class="col colend sidebar aside">
-			sidebar aside
+				<h2>My First Thingy</h2>
+				<p>Here's some content that we're highlighting in the sidebar, see?</p>
 			</div>
+		
 		</div>
 		
 	</div>
@@ -74,10 +92,12 @@
 </div> <!-- end outer-wrapper (used for some padding for the edges) -->
 
 <!-- jQuery and jQuery UI libraries linked to here for convenience. -->
-<!--
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<!--
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 -->
+<script src="nivo-slider-2/jquery.nivo.slider.js"></script>
 <!-- All my custom JS handled in one file -->
 <script src="my.js"></script>
 

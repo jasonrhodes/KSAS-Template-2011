@@ -1,3 +1,5 @@
+ @import url('color-styles/deep-blue.php');
+ 
 /*
  * Template Name: Site Executive KSAS 2011
  * Version: 1.0
@@ -8,6 +10,7 @@
  
  @charset "UTF-8";
  
+
 
 /*********************************************
  * 1. 	First, we reset (and re-set)
@@ -231,23 +234,22 @@ a:hover {
 }
 
 .center {
-	width: 950px;
+	width: 1067px;
 	margin: 0 auto; 
-	min-width: 250px;
-	max-width: 1300px;
+	min-width: 960px;
+	max-width: 1100px;
 }
 
 .col {
 	float: left;
-	width: 25%;
-	padding-left: 3%;
+	width: 267px;
 }
 .colwide {
-	width: 72%;
+	width: 800px;
 }
 .col .col { 
-	width: 28%; 
-	padding-left: 5%;
+	width: 30%; 
+	padding-left: 3%;
 }
 .col .colwide {
 	width: 67%;
@@ -268,30 +270,6 @@ a:hover {
  *		modules will never (rarely) affect each
  *		other with inheritance and cascade.
  ********************************************/
-
-/* +++ Module: Template-Specific Colors */
-/* ##################################
- * Deep Blue Theme:
- * #1c2349 	primary blue
- * #5a688d	secondary hover blue
- * ##################################
- */
- 
-.logo-parent a {
-	background-color: #1c2349;
-}
-.logo-parent a:hover {
-	background-color: #5a688d;
-}
-.search {
-	background-color: #5a688d;
-}
-.main-content {
-	background: url();
-}
-.main-content .center {
-	background-color: #1c2349;
-}
 
 /* +++ Module: Typography */
 
@@ -332,20 +310,49 @@ body {
 /* +++ Module: Main Content Area */
 
 	/* Submodule: Feature */
-	/* Note: This requires some hackery to get around the padding from the parent element, but
-	/* this is better than changing the whole .col structure just for this section on the front page.
-	*/
 	.feature {
-		width: 713px;
-		position: relative;
-		left: -28px;
-		background-color: rgba(0,0,0,0.2);
+	
 	}
+	#feature-carousel .feature img { 
+		display: none; 
+	}
+	.feature img.first { display: block; }
 	
 .main-content .center {
 	background-image: url(images/ksas-2011-maincontent-bg.png);
-	background-position: 237px top;
+	background-position: 267px top;
 	background-repeat: repeat-y;
+}
+.main-content .primary {
+	padding: 0 0 100px;
+	width: 800px;
+}
+
+.body-content {
+	padding: 15px 15px 30px;
+}
+
+.body-content h1 {
+	font-size: 150%;
+	font-weight: bold;
+	margin: 0 0 0.5em;
+}
+
+/* +++ Module: Front page sidebar */
+.main-content .sidebar {
+	position: relative;
+	left: 3px;
+}
+.sidebar {
+	font-size: 85%;
+}
+.sidebar h2 {
+	text-transform: uppercase;
+	padding: 3px 10px;
+	margin: 15px 0 5px;
+}
+.sidebar p, .sidebar ul, .sidebar ol, .sidebar blockquote {
+	padding: 0 10px;
 }
 
 
