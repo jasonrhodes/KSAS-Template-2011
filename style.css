@@ -222,14 +222,6 @@ body {
 	font-size: 100%;
 }
 
-/* DEVELOPMENT STYLES, REMOVE AFTER INITIAL MOCKUP/WIREFRAME IS APPROVED */
-div {
-	min-height: 50px;
-	background-color: rgba(0,0,0,0.1);
-	border: 1px solid rgba(255,255,255,0.1);
-}
-/* END DEV STYLES */
-
 a { 
 	text-decoration: none; 
 	color: #62727f;
@@ -240,7 +232,6 @@ a:hover {
 
 .center {
 	width: 950px;
-	padding: 15px 4%;
 	margin: 0 auto; 
 	min-width: 250px;
 	max-width: 1300px;
@@ -248,14 +239,21 @@ a:hover {
 
 .col {
 	float: left;
-	width: 27%;
-	margin-right: 4.5%;
+	width: 25%;
+	padding-left: 3%;
 }
 .colwide {
-	width: 68%;
+	width: 72%;
 }
-.colend {
-	margin-right: 0;
+.col .col { 
+	width: 28%; 
+	padding-left: 5%;
+}
+.col .colwide {
+	width: 67%;
+}
+.colfirst, .col .colfirst {
+	padding-left: 0;
 }
 
 
@@ -271,6 +269,30 @@ a:hover {
  *		other with inheritance and cascade.
  ********************************************/
 
+/* +++ Module: Template-Specific Colors */
+/* ##################################
+ * Deep Blue Theme:
+ * #1c2349 	primary blue
+ * #5a688d	secondary hover blue
+ * ##################################
+ */
+ 
+.logo-parent a {
+	background-color: #1c2349;
+}
+.logo-parent a:hover {
+	background-color: #5a688d;
+}
+.search {
+	background-color: #5a688d;
+}
+.main-content {
+	background: url();
+}
+.main-content .center {
+	background-color: #1c2349;
+}
+
 /* +++ Module: Typography */
 
 
@@ -281,13 +303,58 @@ a:hover {
 
 
 /* +++ Module: Links, Logos, Backgrounds, and Layout Fixes */
+body {
+	background-color: #333;
+}
 
+/* +++ Module: Header */
+.sub-nav {
+	background-color: #111;
+}
+.banner {
+	background-color: #fff;
+}
+.logo-parent a {
+	display: block;
+	text-indent: -999em;
+	height: 90px;
+	background-image: url(images/jhas-logo-transparent.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.search {
+	
+}
 
 /* +++ Module: Main Navigation */
 
 
-/* +++ Module: Footer */
+/* +++ Module: Main Content Area */
 
+	/* Submodule: Feature */
+	/* Note: This requires some hackery to get around the padding from the parent element, but
+	/* this is better than changing the whole .col structure just for this section on the front page.
+	*/
+	.feature {
+		width: 713px;
+		position: relative;
+		left: -28px;
+		background-color: rgba(0,0,0,0.2);
+	}
+	
+.main-content .center {
+	background-image: url(images/ksas-2011-maincontent-bg.png);
+	background-position: 237px top;
+	background-repeat: repeat-y;
+}
+
+
+/* +++ Module: Footer */
+.footer-main {
+	background-color: transparent;
+	border-top: 5px solid #666;
+	color: #fff;
+}
  
  /*********************************************
  * 5. 	@media query override fun!
