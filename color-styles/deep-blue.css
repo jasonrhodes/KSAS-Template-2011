@@ -1,0 +1,52 @@
+/* +++ Module: Template-Specific Colors */
+
+/* ##################################
+ * Deep Blue Theme:
+ * #1c2349 	primary color (blue)
+ * #5a688d	secondary / hover color (blue)
+ * #ffffff	text color (white)
+ * ##################################
+ */
+
+.logo-parent a {
+	/* Primary color */
+	background-color: #1c2349;
+}
+
+.logo-parent a:hover {
+	/* Secondary color */
+	background-color: #5a688d;
+}
+
+.main-nav a:hover, .main-nav a.current {
+	/* Secondary color */
+	background-color: #5a688d;
+}
+
+.search {
+	/* Secondary color */
+	background-color: #5a688d;
+	background-color: #01347F;
+	background-color: #000;
+	
+	/* background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00ABEB), color-stop(0.5, white), color-stop(0.5, #6C0), to(white)); */
+
+}
+
+.main-content .center {
+	/* Primary color */
+	background-color: #1c2349;
+}
+
+.sidebar {
+	/* Third -- sidebar background color, should be the primary color at about 0.1 alpha over white */
+	background-color: #c2c2d1;
+}
+
+.sidebar h2 {
+	/* Primary color */
+	background-color: #1c2349;
+	
+	/* Secondary color */
+	color: #ffffff;
+}

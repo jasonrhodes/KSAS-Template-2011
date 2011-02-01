@@ -1,4 +1,4 @@
- @import url('color-styles/deep-blue.php');
+ @import url('color-styles/deep-blue.css');
  
 /*
  * Template Name: Site Executive KSAS 2011
@@ -9,8 +9,6 @@
  */
  
  @charset "UTF-8";
- 
-
 
 /*********************************************
  * 1. 	First, we reset (and re-set)
@@ -219,10 +217,14 @@ button {  width: auto; overflow: visible; }
  ********************************************/
 
 body {
-	font-family: Geneva, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+	font-family: 'Droid Sans', "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
 	background-color: #efefef;
 	color: #222;
 	font-size: 100%;
+	line-height: 140%;
+}
+p {
+	margin-bottom: 1em;
 }
 
 a { 
@@ -249,13 +251,21 @@ a:hover {
 }
 .col .col { 
 	width: 30%; 
-	padding-left: 3%;
+	margin-left: 3%;
 }
 .col .colwide {
 	width: 67%;
 }
 .colfirst, .col .colfirst {
-	padding-left: 0;
+	margin-left: 0;
+}
+.colright {
+	float: right;
+}
+
+.nav ul {
+	list-style: none;
+	margin-left: 0;
 }
 
 
@@ -288,6 +298,11 @@ body {
 /* +++ Module: Header */
 .sub-nav {
 	background-color: #111;
+	-webkit-transition: all 0.4s ease-out;
+	text-align: center;
+}
+.sub-nav:hover {
+	background-color: rgba(255,215,0,1);
 }
 .banner {
 	background-color: #fff;
@@ -300,48 +315,209 @@ body {
 	background-position: center center;
 	background-repeat: no-repeat;
 }
-.search {
-	
+.logo-main a {
+	display: block;
+	height: 90px;
+	overflow: hidden;
 }
+	/* + Submodule: Search */
+	.search-main { display: none; }
+	.search {
+		padding: 5px 0;
+		position: relative;
+		z-index: 200;
+		-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.2);
+	}
+	.search-box {
+		float: right;
+		text-align: right;
+	}
+	.search-box form {
+		position: relative;
+	}
+	.search-input {
+		border: none;
+		outline: none;
+		opacity: 0.5;
+		width: 190px;
+		padding: 5px 40px 5px 10px;
+		font-size: 14px;
+		-webkit-transition: all 0.4s ease-out;
+	}
+	.search-input:focus {
+		width: 300px;
+		opacity: 1;
+	}
+	.search-submit {
+		border: none;
+		background: transparent url(images/mag-glass.png) right center no-repeat;
+		text-indent: -9999em;
+		position: absolute;
+		width: 25px;
+		height: 20px;
+		right: 5px;
+		top: 5px;
+	}
+	.custom-radio {
+		display: inline;
+		margin-right: 15px;
+		position: relative;
+		top: 2px;
+	}
+	/* input, label positioning */
+	.custom-checkbox input, 
+	.custom-radio input {
+		position: absolute;
+		left: 2px;
+		top: 3px;
+		margin: 0;
+		z-index: 0;
+	}
+	.custom-checkbox label, 
+	.custom-radio label {
+		line-height: 2.5em;
+		padding: 3px;
+		padding-left: 25px;
+		position: relative;
+		z-index: 1;
+		cursor: pointer;
+		color: #fff;
+		font-size: 75%;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	
+	.custom-radio label {
+		background-image: url(images/blue-radios.png);
+		background-repeat: no-repeat;
+		background-position: -16px -8px;
+	}
+	.custom-radio label.hover {
+		background-position: -16px -38px;
+	}
+	.custom-radio label.checked {
+		background-position: -16px -68px;
+	}
+
 
 /* +++ Module: Main Navigation */
+.main-nav ul {
+	margin-top: 30px;
+}
+.main-nav li {
+	border-bottom: 1px solid #666;
+}
+	.main-nav li {
+		border-bottom-color: rgba(255,255,255,0.1);
+	}
+	
+.main-nav a {
+	display: block;
+	color: #fff;
+	line-height: 220%;
+	padding: 0 20px;
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: 700;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.7);
+}
+
+/* +++ Module: Department Details */
+.nav-and-details .details {
+	padding: 20px;
+	color: #fff;
+	font-size: 85%;
+}
 
 
 /* +++ Module: Main Content Area */
 
-	/* Submodule: Feature */
+.outer-wrapper {
+	/* background-image: url(images/bodybg.png);
+	background-position: top center;
+	background-repeat: repeat;
+	*/
+}
+.main-content {
+	background-image: url(images/bodybg.png);
+	background-position: top center;
+	background-repeat: repeat;
+	position: relative;
+	z-index: 150;
+}
+.main-content .center {
+	/* -webkit-box-shadow: 3px 0 5px rgba(0,0,0,0.1), -3px 0 5px rgba(0,0,0,0.1); */
+}
+
+	/* + Submodule: Feature */
 	.feature {
 	
 	}
-	#feature-carousel .feature img { 
+	#feature-carousel img { 
 		display: none; 
 	}
 	.feature img.first { display: block; }
-	
-.main-content .center {
-	background-image: url(images/ksas-2011-maincontent-bg.png);
-	background-position: 267px top;
-	background-repeat: repeat-y;
-}
+	.nivo-directionNav a {
+		text-indent: -9999em;
+		height: 30px;
+		width: 30px;
+		opacity: 0.5;
+		top: 40%;
+	}
+	.nivo-directionNav a:hover {
+		opacity: 0.8;
+	}
+	.nivo-nextNav {	
+		background: url(images/Arrow_Right.png) center center no-repeat;
+	}
+	.nivo-prevNav {
+		background: url(images/Arrow_Left.png) center center no-repeat;
+	}
+	.nivo-controlNav {
+		display: none;
+	}
+
+
 .main-content .primary {
-	padding: 0 0 100px;
+	padding: 0;
 	width: 800px;
+	background-color: #fff;
+	overflow: hidden;
 }
 
 .body-content {
-	padding: 15px 15px 30px;
+	padding: 30px 30px 100px;
+	width: 720px;
 }
 
 .body-content h1 {
-	font-size: 150%;
+	font-size: 160%;
 	font-weight: bold;
 	margin: 0 0 0.5em;
+}
+.body-content h2 {
+	font-family: 'Droid Serif', Georgia, 'Times New Roman', serif;
+	font-size: 130%;
+	font-weight: bold;
+	margin: 1.5em 0 0.5em;
+}
+.body-content h3 {
+	font-weight: 100;
+	text-transform: uppercase;
+	color: #666;
+	margin: 2em 0 0.5em;
+}
+
+.body-content ul, .body-content ol {
+	margin: 15px 40px;
 }
 
 /* +++ Module: Front page sidebar */
 .main-content .sidebar {
 	position: relative;
 	left: 3px;
+	padding-bottom: 50px;
 }
 .sidebar {
 	font-size: 85%;
@@ -354,6 +530,9 @@ body {
 .sidebar p, .sidebar ul, .sidebar ol, .sidebar blockquote {
 	padding: 0 10px;
 }
+.sidebar ul, .sidebar ol {
+	margin-left: 20px;
+}
 
 
 /* +++ Module: Footer */
@@ -361,6 +540,7 @@ body {
 	background-color: transparent;
 	border-top: 5px solid #666;
 	color: #fff;
+	padding: 10px 0;
 }
  
  /*********************************************
