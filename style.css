@@ -1,5 +1,3 @@
- @import url('color-styles/deep-blue.css');
- 
 /*
  * Template Name: Site Executive KSAS 2011
  * Version: 1.0
@@ -75,7 +73,51 @@ input, select { vertical-align:middle; }
  * 2. 	Next, we set some foundational styles
  *
  ********************************************/
-
+	
+	/* ##################################
+	 * Deep Blue Theme:
+	 * #1c2349 	primary color (blue)
+	 * #5a688d	secondary / hover color (blue)
+	 * #ffffff	text color (white)
+	 * ##################################
+	 */
+	
+	.logo-parent a {
+		/* Primary color */
+		background-color: #1c2349;
+	}
+	
+	.logo-parent a:hover {
+		/* Secondary color */
+		background-color: #5a688d;
+	}
+	
+	.main-nav a:hover, .main-nav .current a {
+		/* Secondary color */
+		background-color: #5a688d;
+	}
+	
+	.main-content .center {
+		/* Primary color */
+		background-color: #1c2349;
+	}
+	
+	.sidebar {
+		/* Third -- sidebar background color, should be the primary color at about 0.1 alpha over white */
+		background-color: #c2c2d1;
+	}
+	
+	.sidebar h2 {
+		/* Primary color */
+		background-color: #1c2349;
+		
+		/* Secondary color */
+		color: #ffffff;
+	}
+	
+	/**************
+	END COLOR THEME
+	***************/
 
 
 /* normalize monospace sizing 
@@ -217,7 +259,7 @@ button {  width: auto; overflow: visible; }
  ********************************************/
 
 body {
-	font-family: 'Droid Sans', "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+	font-family: Verdana, "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
 	background-color: #efefef;
 	color: #222;
 	font-size: 100%;
@@ -281,6 +323,98 @@ a:hover {
  *		other with inheritance and cascade.
  ********************************************/
 
+/* +++ Module: Plugins 
+ * (CSS for various JavaScript and 3rd Party plugins, 
+ * or other modularized CSS from central JHU, etc.
+ */
+ 
+ 	/* jQuery Plugin: nivo Slider */
+	 /*
+	 * jQuery Nivo Slider v2.3
+	 * http://nivo.dev7studios.com
+	 *
+	 * Copyright 2010, Gilbert Pellegrom
+	 * Free to use and abuse under the MIT license.
+	 * http://www.opensource.org/licenses/mit-license.php
+	 * 
+	 * March 2010
+	 */
+	 
+	 
+	/* The Nivo Slider styles */
+	.nivoSlider {
+		position:relative;
+	}
+	.nivoSlider img {
+		position:absolute;
+		top:0px;
+		left:0px;
+	}
+	/* If an image is wrapped in a link */
+	.nivoSlider a.nivo-imageLink {
+		position:absolute;
+		top:0px;
+		left:0px;
+		width:100%;
+		height:100%;
+		border:0;
+		padding:0;
+		margin:0;
+		z-index:60;
+		display:none;
+	}
+	/* The slices in the Slider */
+	.nivo-slice {
+		display:block;
+		position:absolute;
+		z-index:50;
+		height:100%;
+	}
+	/* Caption styles */
+	.nivo-caption {
+		position:absolute;
+		left:0px;
+		bottom:0px;
+		background:#000;
+		color:#fff;
+		opacity:0.8; /* Overridden by captionOpacity setting */
+		width:100%;
+		z-index:89;
+	}
+	.nivo-caption p {
+		padding:5px;
+		margin:0;
+	}
+	.nivo-caption a {
+		display:inline !important;
+	}
+	.nivo-html-caption {
+	    display:none;
+	}
+	/* Direction nav styles (e.g. Next & Prev) */
+	.nivo-directionNav a {
+		position:absolute;
+		top:45%;
+		z-index:99;
+		cursor:pointer;
+	}
+	.nivo-prevNav {
+		left:0px;
+	}
+	.nivo-nextNav {
+		right:0px;
+	}
+	/* Control nav styles (e.g. 1,2,3...) */
+	.nivo-controlNav a {
+		position:relative;
+		z-index:99;
+		cursor:pointer;
+	}
+	.nivo-controlNav a.active {
+		font-weight:bold;
+	}
+
+
 /* +++ Module: Typography */
 
 
@@ -292,7 +426,7 @@ a:hover {
 
 /* +++ Module: Links, Logos, Backgrounds, and Layout Fixes */
 body {
-	background-color: #333;
+	background-color: #111;
 }
 
 /* +++ Module: Header */
@@ -327,6 +461,7 @@ body {
 		position: relative;
 		z-index: 200;
 		-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.2);
+		background-color: #666;
 	}
 	.search-box {
 		float: right;
@@ -418,13 +553,48 @@ body {
 	padding: 0 20px;
 	font-size: 14px;
 	text-transform: uppercase;
-	font-weight: 700;
 	border-bottom: 1px solid rgba(0,0,0,0.1);
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.7);
 }
 
+.main-nav li ul {
+	display: none;
+	margin-top: 5px;
+	margin-left: 10px;
+	padding-bottom: 15px;
+}
+.main-nav .current ul {
+	display: block;
+}
+.main-nav li li {
+	border: none;
+	margin-bottom: 8px;
+}
+.main-nav li li a, .main-nav .current li a {
+	background-color: transparent;
+	border: none;
+	text-transform: none;
+	color: #999;
+	line-height: 140%;
+}
+	.main-nav li li a {
+		color: rgba(255,255,255,0.6);
+	}
+.main-nav li .current-sub a {
+	font-weight: bold;
+	color: #fff;
+}
+.main-nav li li a:hover {
+	background-color: transparent;
+	color: #fff;
+}
+.current-sub a:after {
+	/* content: " \2192"; */
+	content: " \203B";
+}
+
 /* +++ Module: Department Details */
-.nav-and-details .details {
+.nav-and-details .details p {
 	padding: 20px;
 	color: #fff;
 	font-size: 85%;
@@ -486,30 +656,30 @@ body {
 	overflow: hidden;
 }
 
-.body-content {
+.se-body-content {
 	padding: 30px 30px 100px;
 	width: 720px;
 }
 
-.body-content h1 {
-	font-size: 160%;
+.se-body-content h1 {
+	font-size: 24px;
 	font-weight: bold;
 	margin: 0 0 0.5em;
 }
-.body-content h2 {
-	font-family: 'Droid Serif', Georgia, 'Times New Roman', serif;
-	font-size: 130%;
+.se-body-content h2 {
+	font-size: 18px;
 	font-weight: bold;
 	margin: 1.5em 0 0.5em;
 }
-.body-content h3 {
-	font-weight: 100;
+.se-body-content h3 {
+	font-family: Cambria, Georgia, 'Times New Roman', serif;
+	font-weight: bold;
 	text-transform: uppercase;
-	color: #666;
+	color: #767676;
 	margin: 2em 0 0.5em;
 }
 
-.body-content ul, .body-content ol {
+.se-body-content ul, .se-body-content ol {
 	margin: 15px 40px;
 }
 
@@ -538,9 +708,12 @@ body {
 /* +++ Module: Footer */
 .footer-main {
 	background-color: transparent;
-	border-top: 5px solid #666;
+	border-top: 12px solid #444;
 	color: #fff;
-	padding: 10px 0;
+	padding: 30px 0;
+	font-size: 80%;
+	color: #666;
+	text-align: center;
 }
  
  /*********************************************

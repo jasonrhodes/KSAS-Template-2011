@@ -71,12 +71,27 @@ $(window).load(function() {
     $('input[name=google]').customInput();
     
     
-    // Find height of #bodyContent and set height of #rightSidebar to that -50 (for 50px of bottom padding)
+    // Find height of #primaryContent and set it to height of #navDetails if #primaryContent is shorter
+    (function () { 
+    	var primaryHeight = $('#primaryContent').height(),
+    		navHeight = $('#navDetails').height();
+    		
+		if (primaryHeight < navHeight) {
+    		$('#primaryContent').height(navHeight);
+    	}
+    	
+    })();
+    
+    // Find height of #bodyContent and set height of #rightSidebar to that -50 (for 50px of bottom padding) if #rightSidebar is shorter
     (function () { 
     	var bodyHeight = $('#bodyContent').height(),
+    		rsbHeight = $('#rightSidebar').height(),
     		setHeight = bodyHeight - 50;
-
-    	$('#rightSidebar').height(setHeight);
+    		
+		if (rsbHeight < setHeight) {
+    		$('#rightSidebar').height(setHeight);
+    	}
+    	
     })();
     
     // Current page handling for setting navigation styles

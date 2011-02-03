@@ -22,7 +22,11 @@
    	var navigation = { };
 </script>
 <script>
-	navigation.page = "Home";
+	// This is the CSS ID of the top level page you want highlighted (delete or comment out to omit)
+	navigation.top = "navHome"; 		
+	
+	// This is the CSS ID of the subpage you want highlighted (delete or comment out to omit)
+	//navigation.sub = ""; 	 
 </script>
 <script type="text/javascript" src="http://webapps.jhu.edu/jhuniverse/includes/explorer_bar/js/jhuBar.js"></script>
 <div class="outer-wrapper mod">
@@ -41,7 +45,7 @@
 				<a href="http://krieger.jhu.edu">Johns Hopkins Zanvyl Krieger School of Arts and Sciences</a>
 			</div>
 			<div class="col colwide colend logo-main">
-				<a href="#"><img src="images/header-sample.jpg" alt="Sample Image Home" /></a>
+				<a href="#"><img src="images/sample-dept-header.jpg" alt="Sample Image Home" /></a>
 			</div>
 		</div>
 	</div>
@@ -65,11 +69,18 @@
 
 <div class="section main-content">
 	<div class="center mod">		
-		<div class="col colfirst nav-and-details">
+		<div id="navDetails" class="col colfirst nav-and-details">
 			<div id="mainNav" class="nav main-nav">
 				<ul>
-					<li><a id="navHome" href=".">Home</a></li>
-					<li><a id="navAbout" href="about.html">About</a></li>
+					<li id="navHome"><a href=".">Home</a></li>
+					<li id="navAbout">
+						<a href="about.html">About</a>
+						<ul>
+							<li id="subnavHistory"><a href="#">Our History</a></li>
+							<li><a href="#">About the Staff</a></li>
+							<li><a href="#">Buildings and Resources</a></li>
+						</ul>
+					</li>
 					<li><a id="navUndergraduate" href="#">Undergraduate Program</a></li>
 					<li><a id="navGraduate" href="#">Graduate Program</a></li>
 					<li><a id="navCourses" href="#">Courses</a></li>
@@ -78,7 +89,8 @@
 					<li><a id="navContact" href="#">Contact</a></li>
 				</ul>
 			</div>
-			<p class="details">
+			<div class="details">
+			<p>
 				Department of Sample<br/>
 				Johns Hopkins University<br/>
 				3400 N. Charles Street<br/>
@@ -89,8 +101,9 @@
 				Fax (410) 516-4757<br/>
 				Email: english@jhu.edu<br/>
 			</p>
+			</div>
 		</div>
-		<div class="col colwide colend primary mod">
+		<div id="primaryContent" class="col colwide colend primary mod">
 
 			<div id="feature-carousel" class="feature">
 				<a href="http://google.com"><img class="first" src="images/feature1.jpg" title="#nivo-caption-1" /></a>
@@ -106,7 +119,7 @@
 			    <p>Dr. Teeth and the Electric Mayhem rocking out at Madison Square Garden.</p>
 			</div>
 			
-			<div id="bodyContent" class="">
+			<div id="bodyContent" class="mod">
 				<div id="rightSidebar" class="col colend colright sidebar aside">
 				
 					<h2>My First Thingy</h2>
@@ -122,9 +135,17 @@
 						<li>even have</li>
 						<li>a list.</li>
 					</ul>
-					
+					<h2>Testing More</h2>
+					<p>More text</p>
+					<p>More text</p>
+					<p>More text</p>
+					<p>More text</p>
+					<p>More text</p>
+					<p>More text</p>
+					<p>Even more text</p>
+					<p>More text</p>
 				</div>
-				<div class="body-content">
+				<div class="se-body-content">
 					<h1>Heading 1 (body content area)</h1>
 					<p>The body content, followed by more content in the body, whereby which would have be followed by such that there is more content as well, heretoforward, and so on.</p>
 					<h2>Heading 2</h2>
@@ -151,19 +172,27 @@
 
 <div class="section footer footer-main">
 	<div class="center">
-	&copy; <span id="currentYear">2011</span> Johns Hopkins University, Zanvyl Krieger School of Arts and Sciences
+	&copy; The Johns Hopkins University. All rights reserved.
 	</div>
 </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
-	var linkID;
+	var topID, subID;
 	
-	navigation.page = navigation.page || "";
-	linkID = "#nav" + navigation.page;
-		
-	$(linkID).addClass('current');
+	topID = navigation.top;
+	subID = navigation.sub;
+	
+	if(topID) {
+		topID = "#" + topID;
+		$(topID).addClass('current');
+	}
+	if(subID) {
+		subID = "#" + subID;
+		$(subID).addClass('current-sub');
+	}
+	
 });
 </script>
 
